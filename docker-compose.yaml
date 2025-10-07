@@ -1,0 +1,39 @@
+services:
+  database:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: attendance
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+
+  # n8n:
+  #   image: n8nio/n8n
+  #   restart: always
+  #   environment:
+  #     N8N_HOST: localhost
+  #     N8N_PORT: 5678
+  #   volumes:
+  #     - n8n_data:/home/node/.n8n
+  #   ports:
+  #     - "5678:5678"
+  #   depends_on:
+  #     - database
+  #     - redis
+
+volumes:
+  postgres_data:
+  redis-data:
+  n8n_data:

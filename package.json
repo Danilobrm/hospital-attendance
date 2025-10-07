@@ -1,0 +1,13 @@
+{
+  "name": "hospital-attendance",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down -v",
+    "docker:logs": "docker logs -f hospital-attendance-api-1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -10,7 +10,7 @@ interface AuthData {
 
 interface AuthContextProps extends AuthData {
   isAuthenticated: boolean;
-  login: (token: string, patient: Patient) => Promise<void>;
+  login: (token: string) => Promise<void>;
   logout: () => Promise<void>;
   loading: boolean;
 }

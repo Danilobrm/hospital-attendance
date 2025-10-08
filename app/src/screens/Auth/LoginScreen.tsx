@@ -13,23 +13,7 @@ import {
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { loginPatient } from "../../api/auth";
-import { Patient } from "../../interfaces/patient";
 import { useAuth } from "../../contexts/AuthContext";
-
-// --- MOCK NAVIGATION IMPORTS (Consistent with HomeScreen implementation) ---
-interface NavigationProp {
-  navigate: (screen: string, params?: any) => void;
-  // Add other methods like replace, goBack, etc., as needed
-}
-
-// NOTE: Uncomment the real useNavigation hook when ready
-// const useNavigation = (): NavigationProp => ({
-//   navigate: (screen: string, params?: any) => {
-//     console.log(`[NAVIGATE] Attempting to go to: ${screen} with params:`, params);
-//     // In a real app, this would change the visible screen
-//   },
-// });
-// --------------------------------------------------------------------------
 
 const windowHeight = Dimensions.get("window").height;
 

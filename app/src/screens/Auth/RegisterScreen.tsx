@@ -12,17 +12,15 @@ import {
 } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useMutation } from "@tanstack/react-query";
-import { registerPatient } from "../../api/auth"; // Assuming registerPatient is now in "../../api/auth"
+import { registerPatient } from "../../api/auth"; 
 import moment from "moment";
 
 const windowHeight = Dimensions.get("window").height;
-
-// Define the shape of the data needed for registration
 interface RegisterData {
   name: string;
   email: string;
   password: string;
-  birthDate: string; // ISO 8601 format
+  birthDate: string;
   phone: string;
 }
 
@@ -43,7 +41,6 @@ export const RegisterScreen: React.FC = () => {
     console.log("Registration Successful!");
     setSuccessMessage("Account created successfully! Please log in.");
 
-    // Optionally clear fields after success
     setName("");
     setEmail("");
     setPassword("");
@@ -78,13 +75,11 @@ export const RegisterScreen: React.FC = () => {
     setLocalDisplayError("");
     setSuccessMessage("");
 
-    // 2. Updated validation for all required fields
     if (!name || !email || !password || !birthDate || !phone) {
       setLocalDisplayError("Please fill in all fields.");
       return;
     }
 
-    // Simple date validation and formatting to ISO
     const birthDateISO = moment(birthDate, "YYYY-MM-DD", true).toISOString();
 
     if (birthDateISO === "Invalid date") {

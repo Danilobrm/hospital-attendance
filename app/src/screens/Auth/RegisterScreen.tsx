@@ -28,11 +28,11 @@ export const RegisterScreen: React.FC = () => {
   const navigation = useNavigation<any>();
 
   // 1. State for all DTO fields
-  const [name, setName] = useState("Jane Doe");
-  const [email, setEmail] = useState("jane.doe@example.com");
-  const [password, setPassword] = useState("SecurePwd123");
-  const [birthDate, setBirthDate] = useState("1995-10-25"); // YYYY-MM-DD format for input
-  const [phone, setPhone] = useState("555-123-4567");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [birthDate, setBirthDate] = useState("");
+  const [phone, setPhone] = useState("");
 
   const [localDisplayError, setLocalDisplayError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");

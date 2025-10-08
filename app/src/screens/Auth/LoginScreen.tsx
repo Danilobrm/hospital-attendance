@@ -20,8 +20,8 @@ const windowHeight = Dimensions.get("window").height;
 export const LoginScreen: React.FC = () => {
   const { login } = useAuth();
   const navigation = useNavigation();
-  const [email, setEmail] = useState("test@example.com");
-  const [password, setPassword] = useState("password123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [localDisplayError, setLocalDisplayError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 

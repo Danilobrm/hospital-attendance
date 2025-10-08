@@ -3,12 +3,7 @@ import { client } from "./api";
 import { Patient } from "../interfaces/patient";
 
 export const loginPatient = async (email: string, password: string): Promise<{ token: string; patient: Patient }> => {
-  const credentials = {
-    email: "john.doe@hospital.com",
-    password: "secretpatientpassword",
-  };
-
-  // const credentials = { email, password };
+  const credentials = { email, password };
 
   const response = await client.post("/auth/login/patient", credentials);
   const { token, patient } = response.data;
